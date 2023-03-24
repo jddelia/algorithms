@@ -9,8 +9,8 @@ function uncompress(string) {
       let currentMultiple = parseInt(currentNum);
       for (let n = 0; n < currentMultiple; n++) {
         result += string[i];
-        currentNum = "";
       }
+      currentNum = "";
     }
   }
   return result;
