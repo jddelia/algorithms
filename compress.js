@@ -1,5 +1,5 @@
 function compress(s) {
-  let result = "";
+  let result = [];
 
   let currentString = "";
   for (let i = 0; i < s.length; i++) {
@@ -12,17 +12,21 @@ function compress(s) {
 
     if (s[i + 1] !== currentString[currentString.length - 1]) {
       if (currentString.length === 1) {
-        result += currentString[0];
+        result.push(currentString[0]);
       } else {
-        result += currentString.length.toString() + currentString[0];
+        result.push(currentString.length, currentString[0]);
       }
       currentString = "";
     }
   }
-  return result;
+  return result.join("");
 }
 
 console.log(compress("aaabb"));
 console.log(compress("ccaaatsss"));
 console.log(compress("ssssbbz"));
-console.log(compress("aaabbc"));
+console.log(
+  compress(
+    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+  )
+);
