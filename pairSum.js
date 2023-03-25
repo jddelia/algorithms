@@ -14,12 +14,13 @@ function pairSum(arr, target) {
   }
 }
 
+// O(n)
 function pairSum2(arr, target) {
   const nums = {};
   for (let i = 0; i < arr.length; i++) {
-    let numsKey = target - arr[i];
-    if (nums[numsKey] !== undefined) {
-      return [nums[numsKey], i];
+    let complement = target - arr[i];
+    if (nums[complement] !== undefined) {
+      return [nums[complement], i];
     }
     nums[arr[i]] = i;
   }
