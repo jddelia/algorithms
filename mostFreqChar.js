@@ -2,24 +2,20 @@
 
 function mostFreqChar(s) {
   const charObj = {};
-
   for (let char of s) {
     if (!charObj[char]) {
       charObj[char] = 0;
     }
-
     charObj[char] += 1;
   }
 
-  let mostFreq = -Infinity;
-  let mostFreqKey = null;
-  for (let key in charObj) {
-    if (charObj[key] > mostFreq) {
-      mostFreqKey = key;
-      mostFreq = charObj[key];
+  let mostFreq = s[0];
+  for (let char of s) {
+    if (charObj[char] > charObj[mostFreq]) {
+      mostFreq = char;
     }
   }
-  return mostFreqKey;
+  return mostFreq;
 }
 
 console.log(mostFreqChar("test"));
