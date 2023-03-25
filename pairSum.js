@@ -26,6 +26,7 @@ function pairSum2(arr, target) {
   }
 }
 
+// O(n^2)
 function pairSumRecursive(arr, target, startIndex = 0) {
   if (startIndex >= arr.length - 1) {
     return undefined;
@@ -41,6 +42,7 @@ function pairSumRecursive(arr, target, startIndex = 0) {
   return pairSumRecursive(arr, target, startIndex + 1);
 }
 
+// O(n)
 function pairSumRecursive2(arr, target, startIndex = 0, seenNums = {}) {
   if (startIndex >= arr.length) {
     return undefined;
